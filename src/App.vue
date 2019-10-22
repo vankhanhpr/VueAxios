@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     async fetch () {
-	  this.user = await ResponsitoryFactory.get('user').get()
+	  this.user = await UserReponsitory.get()
     }
   }
 }
