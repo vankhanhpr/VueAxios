@@ -1,22 +1,29 @@
 
-import Reponsitory from './Responsitory'
-
+import Repository from './Responsitory'
+import axios from 'axios';
 const resource = '/user'
 export default {
   get(){
-	console.log('da toi day1')
-    return Reponsitory.get(`${resource}`)
+    //console.log(Repository.get(`${resource}`))
+    return Repository.get('/posts');
+    // axios({
+    //   method: 'get',
+    //   url: 'https://jsonplaceholder.typicode.com/posts'
+    // })
+    // .then(function (response) {
+    //   console.log(response)
+    // });
   },
   getById (usid) {
-    return Reponsitory.get(`${resource}/${usid}`)
+    return Repository.get(`${resource}/${usid}`)
   },
   create (user) {
-    return Reponsitory.post(`${resource}`, user)
+    return Repository.post(`${resource}`, user)
   },
   update (user) {
-    return Reponsitory.put(`${resource}`, user)
+    return Repository.put(`${resource}`, user)
   },
   delete (usid) {
-    return Reponsitory.delete(`${resource}/${usid}`)
+    return Repository.delete(`${resource}/${usid}`)
   }
 }
