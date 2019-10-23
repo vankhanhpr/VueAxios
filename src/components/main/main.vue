@@ -1,14 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="../../assets/logo.png">
     <button class="test-class" v-on:click="insertUser">Click </button>
-    <router-view/>
   </div>
 </template>
 
 <script>
-import ResponsitoryFactory from './service/factory/ResponsitoryFactory.js'
-const UserReponsitory = ResponsitoryFactory.get('user')
+import responsitoryfactory from '../../service/factory/responsitoryfactory.js'
+const userreponsitory = responsitoryfactory.get('user')
 export default {
   name: 'App',
   data () {
@@ -21,7 +20,7 @@ export default {
   },
   methods: {
     async fetch () {
-      const {data} = await UserReponsitory.getById(0)
+      const {data} = await userreponsitory.getById(0)
       this.user =data;
     },
     insertUser(){
@@ -35,7 +34,7 @@ export default {
       var user = new FormData();
       user.append('usid',1);
       user.append('username','khanhnguyenit');
-      UserReponsitory.create(user)
+      userreponsitory.create(user)
     }
   },
   components:{
