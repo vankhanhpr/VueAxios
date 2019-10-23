@@ -8,7 +8,7 @@
 
 <script>
 import ResponsitoryFactory from './components/ResponsitoryFactory.js'
-//const UserReponsitory = ResponsitoryFactory.get('user')
+const UserReponsitory = ResponsitoryFactory.get('user')
 export default {
   name: 'App',
   data () {
@@ -17,12 +17,12 @@ export default {
     }
   },
   created () {
-    //this.fetch()
+    this.fetch()
   },
   methods: {
-      getAll: function () {
-        const {data}= ResponsitoryFactory.get('user').get()
-      //this.user =data;
+      async fetch () {
+        const {data} = await UserReponsitory.get()
+        this.user =data;
     }
   },
   components:{

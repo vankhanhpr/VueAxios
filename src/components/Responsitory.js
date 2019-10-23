@@ -1,9 +1,9 @@
 
 import axios from 'axios';
 const baseDomain = 'https://localhost:44370';
-//const baseUrl = `${baseDomain}/api`; //'https://localhost:44370' //
-//const baseUrl =  'https://localhost:44370/api' 
-export default axios.create({
-  baseUrl:'https://jsonplaceholder.typicode.com',
-  timeout: 1000,
-})
+const baseUrl = `${baseDomain}/api`;
+//const baseUrl =  'https://jsonplaceholder.typicode.com' 
+const instance = axios.create({
+  baseURL:baseUrl
+});
+export default instance;

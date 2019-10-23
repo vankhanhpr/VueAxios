@@ -6,6 +6,3 @@ const responsitories = {
 export default {
   get: name => responsitories[name]
 }
-// export const ResponsitoryFactory = {
-//   get: name => responsitories[name]
-// }
